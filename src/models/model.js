@@ -1,7 +1,8 @@
 import { Sequelize } from 'sequelize'
-import { get } from 'config'
+import config from 'config'
 
-const dbConfig = get('Customer.dbConfig')
+const dbConfig = config.get('Customer.dbConfig')
+
 const {
   database, userName, password, host, dialect,
 } = dbConfig
