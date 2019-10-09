@@ -1,0 +1,11 @@
+{
+	"Customer": {
+		"dbConfig": {
+			"host": "localhost",
+			"dialect": "mysql",
+			"database": "movie-parser",
+			"username": "root",
+			"password": "your_password"
+		}
+	}
+}
