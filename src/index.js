@@ -1,5 +1,5 @@
 import database from './models/model'
-import test from './custom_module/parser'
+import movieParser from './custom_module/parser'
 
 database.sequelize.sync().then(() => {
   console.log('✅ DataBase connection Success.')
@@ -8,4 +8,4 @@ database.sequelize.sync().then(() => {
 })
 
 
-test()
+movieParser(50)

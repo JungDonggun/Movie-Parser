@@ -38,11 +38,6 @@ const movieParser = database.sequelize.define('movieLists', {
   },
   directors: {
     type: Sequelize.STRING,
-    allowNull: false,
-  },
-  companys: {
-    type: Sequelize.STRING,
-    allowNull: false,
   },
 }, {
   timestamps: false,
