@@ -2,7 +2,9 @@ import { Sequelize } from 'sequelize'
 import { get } from 'config'
 
 const dbConfig = get('Customer.dbConfig')
-const { database, userName, password, host, dialect } = dbConfig
+const {
+  database, userName, password, host, dialect,
+} = dbConfig
 
 const sequelize = new Sequelize(database, userName, password, {
   host,
@@ -13,11 +15,11 @@ const sequelize = new Sequelize(database, userName, password, {
     idle: 10000,
   },
   define: {
-      charset: 'utf8',
-      collate: 'utf8_general_ci',
+    charset: 'utf8',
+    collate: 'utf8_general_ci',
   },
 })
 
 export default {
-  sequelize
+  sequelize,
 }

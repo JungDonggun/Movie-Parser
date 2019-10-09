@@ -6,12 +6,25 @@
 	"author": "DonggunJung <donggun.dev@gmail.com>",
 	"license": "MIT",
 	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-env": "^1.7.0",
 		"eslint": "^6.5.1",
+		"eslint-config-airbnb-base": "^14.0.0",
+		"eslint-plugin-import": "^2.18.2",
 		"nodemon": "^1.19.3"
 	},
 	"dependencies": {
 		"axios": "^0.19.0",
 		"config": "^3.2.3",
+		"global": "^4.4.0",
 		"sequelize": "^5.19.4"
+	},
+	"scripts": {
+		"start": "nodemon src/index.js --exec babel-node",
+		"dev": "nodemon src/index.js --exec babel-node \"npm run lint && node src/index\"",
+		"lint": "eslint **/*.js",
+		"fix": "./node_modules/.bin/eslint --fix /Users/utaha/Desktop/dev/projects/Movie-Parser/src/index.js",
+		"build": "babel src -d dist",
+		"serve": "node dist/index.js"
 	}
 }
