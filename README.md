@@ -1,7 +1,7 @@
 # Movie-Parser
  - # Target
-  - Naver
-  - Daum
+  - BoxOffice 
+   - http://www.kobis.or.kr
    
 
 ### Installation
