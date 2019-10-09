@@ -1,13 +1,15 @@
 import Sequelize from 'sequelize'
 import database from './model'
 
-const movieParser = database.sequelize.define('movie-parser', {
+const movieParser = database.sequelize.define('movieLists', {
   movieNm: {
     type: Sequelize.STRING,
+    unique: true,
     allowNull: false,
   },
   movieNmEn: {
     type: Sequelize.STRING,
+    unique: true,
     allowNull: false,
   },
   prdtYear: {
