@@ -47,7 +47,7 @@ const getMovieList = async (rowCount = 10, page = 1) => {
   try {
     const { movieList } = response.data.movieListResult
 
-    if (pageIndex >= MAX_PAGE) {
+    if (pageIndex > MAX_PAGE) {
       throw console.log('해당 API에 영화 정보가 더이상 없습니다.')
     }
 
