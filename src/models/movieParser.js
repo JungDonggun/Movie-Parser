@@ -9,8 +9,6 @@ const movieParser = database.sequelize.define('movieLists', {
   },
   movieNmEn: {
     type: Sequelize.STRING,
-    unique: true,
-    allowNull: false,
   },
   prdtYear: {
     type: Sequelize.STRING,

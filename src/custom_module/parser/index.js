@@ -4,7 +4,7 @@ import API from '../../target/API'
 import movieListTable from '../../models/movieParser'
 
 const MAX_PAGE = 720
-const TIMER = 2 // 초 단위
+const TIMER = 1 // 초 단위
 
 const joinTheDirectors = (directors) => {
   const module = directors.map((director) => director.peopleNm).join(',')
@@ -30,12 +30,6 @@ const parsedDataInDatabase = (parsedData) => {
         repNationNm,
         directors: joinTheDirectors(directors),
       },
-    }).spread((_, created) => {
-      if (created) {
-        console.log('데이터 생성 완료.')
-      } else {
-        console.log('중복 됌')
-      }
     }).catch((err) => {
       if (err.message !== 'movieNmEn must be unique') {
         console.error('MovieListTable Error =>', err)
