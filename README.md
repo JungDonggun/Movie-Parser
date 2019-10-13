@@ -1,7 +1,8 @@
 # showvie-Movie-Parser
  # Target API
   - BoxOffice 
-   - http://www.kobis.or.kr
+   - http://www.kobis.or.kr'
+   - http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do
    
 
 ### Parsed data description
