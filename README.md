@@ -1,46 +1,85 @@
 # showvie-Movie-Parser
  # Target API
-  - BoxOffice 
-   - http://www.kobis.or.kr'
-   - http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do
+   -http://175.125.91.94/openapi/service/rest/meta/KFCmovi
+
+  <del>- BoxOffice </del>
+   <del>- http://www.kobis.or.kr'</del>
+   <del>- http://www.kobis.or.kr/kobisopenapi/homepg/main/main.do</del>
    
 
+
 ### Parsed data description
-   - movieCd: Outputs movie code.
-   - movieNm: Movie Name (national language).
-   - movieNmEn: Movie Name (English).
-   - prdtYear: Production year is output.
-   - openDt: Output year.
-   - typeNm: Outputs the movie type.
-   - prdtStatNm: Outputs the production status.
-   - nationAlt: Output country of origin (whole).
-   - genreAlt: movie genre (whole).
-   - repNationNm: Output representative production country name.
-   - repGenreNm: Output representative genre name.
-   - directors: Represents a movie director.
-   - peopleNm: Outputs the director name.
-   - companys: Represents the production company.
-   - companyCd: Production company code is output.
-   - companyNm: production mission.
+   - title: Title
+   - description: description
+   - abstractDesc: Summary information
+   - affiliation ： Affiliation
+   - alternativeTitle: Subtitle
+   - charge: Charge information
+   - collectionDb: Affiliation DB
+   - contributor: Contribution
+   - coverage: range
+   - createdDate: Production date
+   - creator: Partner organization name
+   - extent: size
+   - format: Format
+   - grade: Evaluation information
+   - venue: venue
+   - spatial: Spatial information
+   - temporal: period information
+   - time: time
+   - identifier: Identification number
+   - issuedDate: Issued date
+   - medium: shape
+   - period: Period
+   - person: Related person
+   - reference: Reference item
+   - referenceIdentifier: Thumbnail
+   - relation: Related materials
+   - rights: Copyright
+   - source: source
+   - subjectCategory: Classification
+   - subjectKeyword: Keyword
+   - subDescription: Additional description
+   - tableOfContents: table of contents
+   - uci: UCI code
+   - url: Connection URL
 
 ------------------------------
 
-   - movieCd: 영화코드를 출력합니다.
-   - movieNm: 영화명(국문)을 출력합니다.
-   - movieNmEn: 영화명(영문)을 출력합니다.
-   - prdtYear: 제작연도를 출력합니다.
-   - openDt: 개봉연도를 출력합니다.
-   - typeNm: 영화유형을 출력합니다.
-   - prdtStatNm: 제작상태를 출력합니다.
-   - nationAlt: 제작국가(전체)를 출력합니다.
-   - genreAlt: 영화장르(전체)를 출력합니다.
-   - repNationNm: 대표 제작국가명을 출력합니다.
-   - repGenreNm: 대표 장르명을 출력합니다.
-   - directors: 영화감독을 나타냅니다.
-   - peopleNm: 영화감독명을 출력합니다.
-   - companys: 제작사를 나타냅니다.
-   - companyCd: 제작사 코드를 출력합니다.
-   - companyNm: 제작사명을 출력합니다.
+   - title: 제목
+   - description: 설명
+   - abstractDesc: 요약정보
+   - affiliation: 소속
+   - alternativeTitle: 부제
+   - charge: 요금정보
+   - collectionDb: 소속DB
+   - contributor: 기여자
+   - coverage: 범위
+   - createdDate: 제작일
+   - creator: 연계 기관명
+   - extent: 크기
+   - format: 형식
+   - grade: 등급정보
+   - venue: 장소
+   - spatial: 공간정보
+   - temporal: 시대정보
+   - time: 시간
+   - identifier: 식별번호
+   - issuedDate: 발행일
+   - medium: 형태
+   - period: 기간
+   - person: 관련인물
+   - reference: 참조사항
+   - referenceIdentifier: 썸네일
+   - relation: 관련자료
+   - rights: 저작자
+   - source: 출처
+   - subjectCategory: 분류
+   - subjectKeyword: 키워드
+   - subDescription: 부가설명
+   - tableOfContents: 목차
+   - uci: UCI 코드
+   - url: 연결 URL
 
 
 ### Installation
