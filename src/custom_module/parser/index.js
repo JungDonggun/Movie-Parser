@@ -3,7 +3,6 @@ import axios from 'axios'
 import API from '../../target/API'
 import movieListTable from '../../models/movieParser'
 
-const MAX_PAGE = 720
 const LATEST_PAGE = 389;
 const TIMER = 1 // 초 단위
 
@@ -15,13 +14,18 @@ const joinTheDirectors = (directors) => {
 const parsedDataInDatabase = (parsedData) => {
   const isWork = parsedData.map((movieData) => {
     const {
+      title,
       alternativeTitle,
       extent,
+      language,
+      regDate,
       person,
       referenceIdentifier,
       rights,
       subjectCategory,
     } = movieData
+
+    console.log()
 
     // @ts-ignore
     // return movieListTable.findOrCreate({
@@ -53,17 +57,8 @@ const getMovieList = async (rowCount = 10, page = 1) => {
   const pageIndex = page
 
   try {
-    console.log('response', response.data.response.body.items.item)
-  } catch (err) {
-    console.error('err o=> ', err)
-  }
-
-  try {
     const parsedData = response.data.response.body.items.item
 
-    if (pageIndex > MAX_PAGE) {
-      throw console.log('해당 API에 영화 정보가 더이상 없습니다.')
-    }
 
     const saveInDatabase = await parsedDataInDatabase(parsedData)
 

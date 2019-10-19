@@ -2,40 +2,41 @@ import Sequelize from 'sequelize'
 import database from './model'
 
 const movieParser = database.sequelize.define('movieLists', {
-  movieNm: {
+  title: {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
   },
-  movieNmEn: {
+  alternativeTitle: {
     type: Sequelize.STRING,
   },
-  prdtYear: {
+  extent: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  openDt: {
+  language: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  prdtStatNm: {
+  regDate: {
+    type: Sequelize.DATE,
+    allowNull: false,
+  },
+  person: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  nationAlt: {
+  referenceIdentifier: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+  rights: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  genreAlt: {
+  subjectCategory: {
     type: Sequelize.STRING,
     allowNull: false,
-  },
-  repNationNm: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  directors: {
-    type: Sequelize.STRING,
   },
 }, {
   timestamps: false,
