@@ -8,4 +8,4 @@ database.sequelize.sync().then(() => {
 })
 
 
-movieParser(100)
+movieParser(10)

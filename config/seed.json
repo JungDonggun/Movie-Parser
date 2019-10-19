@@ -6,7 +6,6 @@
 			"database": "movie-parser",
 			"username": "root",
 			"password": "your_password"
-		},
-		"API_KEY": "YOUR_API_KEY"
+		}
 	}
 }

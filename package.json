@@ -21,7 +21,7 @@
 		"sequelize": "^5.19.4"
 	},
 	"scripts": {
-		"start": "nodemon src/index.js --exec babel-node",
+		"start": "babel-node src/index",
 		"dev": "nodemon src/index.js --exec babel-node \"npm run lint && node src/index\"",
 		"lint": "eslint **/*.js",
 		"fix": "./node_modules/.bin/eslint --fix /Users/utaha/Desktop/dev/projects/Movie-Parser/src/index.js",

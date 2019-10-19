@@ -1,9 +1,3 @@
-import config from 'config'
-
-const key = config.get('Customer.API_KEY')
-
-const query = `?key=${key}`
-
-const API_URL = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json${query}`
+const API_URL = 'http://175.125.91.94/openapi/service/rest/meta/KFAmovi'
 
 export default API_URL
