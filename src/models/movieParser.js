@@ -12,31 +12,24 @@ const movieParser = database.sequelize.define('movieLists', {
   },
   extent: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   language: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   regDate: {
     type: Sequelize.DATE,
-    allowNull: false,
   },
   person: {
-    type: Sequelize.STRING,
-    allowNull: false,
+    type: Sequelize.TEXT,
   },
   referenceIdentifier: {
     type: Sequelize.TEXT,
-    allowNull: false,
   },
   rights: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
   subjectCategory: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
 }, {
   timestamps: false,

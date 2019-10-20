@@ -3,17 +3,29 @@ import axios from 'axios'
 import API from '../../target/API'
 import movieListTable from '../../models/movieParser'
 
-const LATEST_PAGE = 389;
 const TIMER = 1 // 초 단위
 
-const joinTheDirectors = (directors) => {
-  const module = directors.map((director) => director.peopleNm).join(',')
-  return module
-}
-
 const parsedDataInDatabase = (parsedData) => {
+  console.log('parsedData leng', parsedData.length)
+  console.log('parsedData type', typeof parsedData)
+
   const isWork = parsedData.map((movieData) => {
     const {
+      title,
+      alternativeTitle,
+      language,
+      regDate,
+      person,
+      referenceIdentifier,
+      rights,
+    } = movieData
+
+    let { extent, subjectCategory } = movieData
+
+    extent = extent.split(':')[1].replace(' ', '')
+    subjectCategory = subjectCategory.split(':')[1].replace(' ', '')
+
+    console.log('movieData', {
       title,
       alternativeTitle,
       extent,
@@ -23,30 +35,28 @@ const parsedDataInDatabase = (parsedData) => {
       referenceIdentifier,
       rights,
       subjectCategory,
-    } = movieData
-
-    console.log()
+    })
 
     // @ts-ignore
-    // return movieListTable.findOrCreate({
-    //   where: { movieNm },
-    //   defaults: {
-    //     movieNmEn,
-    //     prdtYear,
-    //     openDt,
-    //     prdtStatNm,
-    //     nationAlt,
-    //     genreAlt,
-    //     repNationNm,
-    //     directors: joinTheDirectors(directors),
-    //   },
-    // }).spread(() => {
-    //   console.log(`movie Name: ${movieNm}`)
-    // }).catch((err) => {
-    //   if (err.message !== 'movieNmEn must be unique') {
-    //     console.error('MovieListTable Error =>', err)
-    //   }
-    // })
+    return movieListTable.findOrCreate({
+      where: { title },
+      defaults: {
+        alternativeTitle,
+        extent,
+        language,
+        regDate,
+        person,
+        referenceIdentifier,
+        rights,
+        subjectCategory,
+      },
+    }).spread(() => {
+      console.log(`movie Name: ${title}`)
+    }).catch((err) => {
+      if (err.message !== 'movieNmEn must be unique') {
+        console.error('MovieListTable Error =>', err)
+      }
+    })
   })
 
   return Promise.all(isWork).then(() => Promise.resolve(true))
@@ -65,7 +75,7 @@ const getMovieList = async (rowCount = 10, page = 1) => {
     if (saveInDatabase) {
       setTimeout(() => {
         getMovieList(rowCount, page + 1)
-        console.log(`크롤링 상황 ${page}/${MAX_PAGE}`)
+        console.log(`${page} 페이지를 DataBase에 저장했습니다.`)
       }, TIMER * 1000)
     }
   } catch (err) {
