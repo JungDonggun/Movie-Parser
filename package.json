@@ -14,7 +14,7 @@
 		"nodemon": "^1.19.3"
 	},
 	"dependencies": {
-		"axios": "^0.19.0",
+		"axios": "^0.21.1",
 		"config": "^3.2.3",
 		"global": "^4.4.0",
 		"mysql2": "^1.7.0",
